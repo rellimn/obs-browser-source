@@ -1,6 +1,6 @@
 services:
   sources:
-    image: nginx:stable-alpine
+    image: nginxinc/nginx-unprivileged:1.30.5
     restart: unless-stopped
     volumes:
       - ./sources:/usr/share/nginx/html:ro
