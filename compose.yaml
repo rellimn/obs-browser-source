@@ -5,14 +5,14 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 5s
 
     expose:
-      - "8888"
+      - "8080"
 
     tmpfs:
       - /tmp:size=32m,mode=1777
@@ -45,7 +45,7 @@ services:
       - "traefik.http.routers.obs-sources.tls=true"
       - "traefik.http.routers.obs-sources.tls.certresolver=letsencrypt"
       - "traefik.http.routers.obs-sources.middlewares=secure-headers@file,rate-limit@file"
-      - "traefik.http.services.obs-sources.loadbalancer.server.port=8888"
+      - "traefik.http.services.obs-sources.loadbalancer.server.port=8080"
 
 networks:
   proxy:

@@ -5,4 +5,4 @@ COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 
 COPY --chown=nginx:nginx sources /usr/share/nginx/html
 
-EXPOSE 8888
+EXPOSE 8080
