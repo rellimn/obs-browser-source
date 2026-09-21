@@ -13,7 +13,7 @@ services:
       start_period: 5s
 
     expose:
-      - "80"
+      - "8080"
 
     tmpfs:
       - /tmp:size=32m,mode=1777
@@ -46,7 +46,7 @@ services:
       - "traefik.http.routers.obs-sources.tls=true"
       - "traefik.http.routers.obs-sources.tls.certresolver=letsencrypt"
       - "traefik.http.routers.obs-sources.middlewares=secure-headers@file,rate-limit@file"
-      - "traefik.http.services.obs-sources.loadbalancer.server.port=80"
+      - "traefik.http.services.obs-sources.loadbalancer.server.port=8080"
 
 networks:
   proxy:
