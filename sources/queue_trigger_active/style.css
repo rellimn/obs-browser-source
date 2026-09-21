@@ -1,0 +1,35 @@
+body, html {
+    height: 100%
+}
+
+.queue-closed-bg {
+    background-image: url("queueCLOSED.png");
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.queue-open-bg {
+    background-image: url("queueOPEN.png");
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.trigger-active-bg {
+    background-image: url("triggerInProgress.png");
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.error {
+    font-size: 25.5vw;
+    color: red;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queue State</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="functions.js"></script>
+    <script>
+        const url = "https://bot.lotv.live/addons/timedEventQueue/queueOpen.txt"
+        const queueUpdate = () => {
+            update(url, "queue-open-bg", "queue-closed-bg")
+        }
+        queueUpdate()
+        setInterval(queueUpdate, 2000)
+    </script>
+</head>
+<body>
+<div id="status"></div>
+</body>
+</html>

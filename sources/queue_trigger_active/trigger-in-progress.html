@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queue State</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="functions.js"></script>
+    <script>
+        const url = "https://bot-staging.lotv.live/addons/timedEventQueue/triggerActive.txt"
+        const queueUpdate = () => {
+            update(url, "trigger-active-bg", "")
+        }
+        queueUpdate()
+        setInterval(queueUpdate, 2000)
+    </script>
+</head>
+<body>
+<div id="status"></div>
+</body>
+</html>

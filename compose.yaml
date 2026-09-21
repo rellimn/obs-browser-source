@@ -1,0 +1,20 @@
+services:
+  sources:
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    volumes:
+      - ./sources:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: proxy
